@@ -9,6 +9,7 @@ public class Main : MonoBehaviour
 {
     public static int coins;
     public GameObject playerObj;
+    public GameObject HPpanel;
     public Text coinsText;
     [SerializeField]
     public List<SkinItem> shopItems = new List<SkinItem>();
@@ -24,6 +25,8 @@ public class Main : MonoBehaviour
     }
     private void Awake()
     {
+        if(PlayerPrefs.HasKey("coinsCount"))
+            coins = PlayerPrefs.GetInt("coinsCount");
         // skins = shopItems;
         // player.CurrentSkin = skins[0];
         // boughtedSkins.Add(skins[0]);
@@ -31,7 +34,8 @@ public class Main : MonoBehaviour
     }
     public void ShowAndHideStore ()
     {
-        playerObj.SetActive(ShopPanel.activeSelf); 
+        playerObj.SetActive(ShopPanel.activeSelf);
+        HPpanel.SetActive(ShopPanel.activeSelf); 
         player.lose = !ShopPanel.activeSelf;
         if (ShopPanel.activeSelf)
             SceneManager.LoadScene("main");
@@ -51,6 +55,21 @@ public class Main : MonoBehaviour
     public static void PlayAudio (AudioClip clip)
     {
         Main.sounds.PlayOneShot(clip); 
+    }
+    public void OnApplicationQuit()
+    {
+        PlayerPrefs.SetInt("coinsCount", coins);
+    }
+    public void OnApplicationPause()
+    {
+        PlayerPrefs.SetInt("coinsCount", coins);
+    }
+
+    public void OnApplicationFocus()
+    {
+        if (PlayerPrefs.HasKey("coinsCount"))
+            coins = PlayerPrefs.GetInt("coinsCount");
+        updateCoinsCount();
     }
 }
 
