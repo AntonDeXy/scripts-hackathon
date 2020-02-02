@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 5592673095633328312}
   - component: {fileID: 114109707800178466}
   - component: {fileID: 7745238132458815583}
+  - component: {fileID: 1430355867925412475}
+  - component: {fileID: 4279057536843810753}
   m_Layer: 0
   m_Name: BombLitSprite
   m_TagString: bomb
@@ -120,3 +122,34 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.67, y: 0.88}
   m_EdgeRadius: 0
+--- !u!95 &1430355867925412475
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4124227351468884525}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: df68b75cd56c3934f9095521c93da468, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &4279057536843810753
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4124227351468884525}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a6a8cad7f3f9c142a493fae07e21f3e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -3,9 +3,9 @@ using UnityEngine.SceneManagement;
 
 public class restart : MonoBehaviour
 {
-    void OnMouseDown()
+    public void Click()
     {
-        print("click");
+        print("restart clicked");
         SceneManager.LoadScene("main");
     }
 }
